@@ -10,10 +10,10 @@ export class InventoryService {
   constructor(private api: ApiService) { }
 
   getInventory(): Observable<Product[]> {
-    return this.api.get(`inventory`);
+    return this.api.get(`inventory/get`);
   }
 
   timerComplete(): Observable<boolean> {
-    return this.api.post(`inventory`)
+    return this.api.post(`inventory/post`)
   }
 }

@@ -12,7 +12,7 @@ export class ApiService {
 
 
     private get apiUrl(): string {
-        return `/`;
+        return `api/`;
     }
     private setUrl(url: string): string {
         if (!url.startsWith(this.apiUrl)) {

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Controllers;
 
 [ApiController]
+[Produces("application/json")]
 [Route("api/[controller]")]
 public class InventoryController : Controller
 {
@@ -17,14 +18,14 @@ public class InventoryController : Controller
         _inventoryRepository = inventoryRepository;
     }
     
-    [HttpGet]
+    [HttpGet("get")]
     public async Task<IEnumerable<Product>> GetInventory()
     {
         return await _inventoryRepository.GetProductsAsync();
     }
 
-    [HttpPost]
-    public async Task<bool> TimerComplete()
+    [HttpPost("[action]")]
+    public async Task<bool> Post()
     {
         return true;
     }
